@@ -1,0 +1,48 @@
+.bot-control {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.bot-control-panel {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bot-control-jobs {
+    align-self: center;
+    flex-grow: 1;
+    border: 1px black solid;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.bot-control-auto-refresh {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.bot-control-auto-refresh > :nth-child(1) {
+    width: 100px;
+}
+
+.bot-control-status {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.success-color {
+    color: green;
+}
+
+.error-color {
+    color: red;
+}

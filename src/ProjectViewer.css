@@ -1,0 +1,6 @@
+.project-viewer {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px black solid;
+}

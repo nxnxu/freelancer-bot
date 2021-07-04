@@ -1,0 +1,61 @@
+.project {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 0 solid black;
+    border-bottom-width: 1px;
+    padding: 2px;
+    color: darkgreen;
+    gap: 5px;
+}
+
+.project-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.project-body {
+    color: black;
+    padding-bottom: 5px;
+}
+
+.project-title {
+
+}
+
+.project-actions {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-self: center;
+}
+
+.project-action {
+    padding: 1px;
+
+}
+
+/*.project-actions {*/
+/*    width: 15%;*/
+/*    display: inline-block;*/
+/*    text-align: center;*/
+/*    !*border: 1px white solid;*!*/
+/*}*/
+
+/*.project-action {*/
+/*    background-color: black;*/
+/*    width: 2em;*/
+/*    font-size: 20px;*/
+/*    border: none;*/
+/*    color: red;*/
+/*}*/
+
+/*.project-description {*/
+/*    padding: 1em;*/
+/*    font-weight: normal;*/
+/*    color: gray;*/
+/*    font-size: 18px;*/
+
+/*}*/
