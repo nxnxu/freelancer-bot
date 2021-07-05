@@ -27,7 +27,7 @@ function Bot(props) {
             failed: 0,
         },
         settings: {
-            refreshTime: 1000,
+            refreshTime: 60000,
         }
     });
 
@@ -125,7 +125,7 @@ function Bot(props) {
     };
 
     const onProjectOpen = (project) => {
-        console.log(project);
+        //console.log(project);
         const url = `https://www.freelancer.com/projects/${project.seo_url}`;
         window.open(url, '_blank');
     }
@@ -188,7 +188,7 @@ function Bot(props) {
         return false;
     });
 
-    
+
     const onHide = (project) => {
         const projects = state.projects.filter(arg => {
             return project.id !== arg.id;
