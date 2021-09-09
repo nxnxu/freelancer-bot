@@ -1,0 +1,17 @@
+.job-result {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.job-add {
+    max-height: 40vh;
+    overflow: auto;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.job-search-result {
+    /*position: absolute;*/
+}

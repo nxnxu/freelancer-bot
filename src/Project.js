@@ -1,5 +1,6 @@
 import React from "react";
 import './Project.css'
+import * as timeago from 'timeago.js';
 
 class Project extends React.Component {
     constructor(props) {
@@ -31,6 +32,10 @@ class Project extends React.Component {
 
     render() {
         const project = this.props.project;
+        let time = new Date(1970, 0, 1);
+        time.setSeconds(project.time_submitted);
+        time = timeago.format(time);
+
         return (
             <div className='project'>
                 <div className='project-header'>
@@ -48,21 +53,12 @@ class Project extends React.Component {
                     </div>
                 }
 
+                <div className={'project-footer'}>
+                    <div className={'project-footer-item color-lightgreen'}> {0|((project.budget.minimum+project.budget.maximum)/2)} {project.currency.country}</div>
+                    <div className={'project-footer-item color-yellow'}> {time}</div>
+                </div>
+
             </div>
-            // <div className='project'>
-            //     <div className='project-header'>
-            //         <div className='project-title'>
-            //             {project.title}
-            //         </div>
-            //         <div className='project-actions'>
-            //             <button className='project-action' onClick={this.xAction}>X</button>
-            //             <button className='project-action' onClick={this.xAction}>X</button>
-            //         </div>
-            //     </div>
-            //     <div className='project-description'>
-            //         {project.description}
-            //     </div>
-            // </div>
         );
 
     }

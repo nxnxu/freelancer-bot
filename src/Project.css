@@ -21,8 +21,31 @@
     padding-bottom: 5px;
 }
 
-.project-title {
+.project-footer {
+    background-color: white;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    /*border-top: 1px black solid;*/
+}
 
+.project-footer-item {
+    /*border: 1px black solid;*/
+    /*padding: 0.1em;*/
+    color: black;
+    font-size: medium;
+}
+
+.color-lightgreen {
+    background-color: lightgreen;
+}
+
+.color-yellow {
+    background-color: yellow;
+
+}
+
+.project-title {
 }
 
 .project-actions {

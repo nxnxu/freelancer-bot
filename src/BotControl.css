@@ -23,6 +23,24 @@
     gap: 10px;
 }
 
+.bot-jobs {
+    border: 1px black solid;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.refresh-section {
+    display: flex;
+    gap: 10px;
+}
+
+.refresh-status {
+    background-color: yellow;
+    text-align: center;
+}
+
 .bot-control-auto-refresh {
     display: flex;
     flex-direction: row;

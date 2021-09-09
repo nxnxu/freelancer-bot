@@ -1,5 +1,8 @@
-import React, {useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import './BotControl.css'
+import JobAdd from "./JobAdd";
+import * as timeago from "timeago.js";
+
 
 function BotControl(props) {
 
@@ -8,6 +11,28 @@ function BotControl(props) {
         refreshTime: props.settings.refreshTime,
         autoRefresh: 0,
     });
+
+    const get = (time) => {
+        if (time === null) {
+            time = "Not Refreshed";
+        } else {
+            time = timeago.format(time);
+        }
+        return time;
+    }
+
+    const [lastrefresh, setLastrefresh] = useState(get(props.lastrefresh));
+
+    React.useEffect(() => {
+        console.log('set time');
+        const interval = setInterval(() => {
+            setLastrefresh(get(props.lastrefresh));
+        }, 1000);
+        return () => {
+            clearInterval(interval);
+        };
+    }, [props.lastrefresh]); // has no dependency - this will be called on-component-mount
+
 
     const onAutoRefresh = e => {
         // console.log('Refresh', e.target.checked);
@@ -48,8 +73,10 @@ function BotControl(props) {
         );
     });
 
+
+
     return (
-        <div className='bot-control'>
+    <div className='bot-control'>
             <div className='bot-control-panel'>
                 <div className='bot-control-status'>
                     <div className='bot-control-status-labels'>
@@ -57,17 +84,12 @@ function BotControl(props) {
                         <div> Success Request:</div>
                         <div> Failed Request: </div>
                         <div> Project Count: </div>
-                        <div> Project Hidden: </div>
                     </div>
                     <div className='bot-control-status-values'>
                         <div> {props.status.total} </div>
                         <div className='success-color'> {props.status.success} </div>
                         <div className='error-color'> {props.status.failed} </div>
                         <div> {props.status.projectCount} </div>
-                        <div> {props.status.hiddenCount} </div>
-                        {/*<div> Total Request: {props.status.total} </div>*/}
-                        {/*<div> Success Request: {props.status.success} </div>*/}
-                        {/*<div> Failed Request: {props.status.failed} </div>*/}
                     </div>
                 </div>
                 <div className='bot-control-auto-refresh'>
@@ -77,12 +99,22 @@ function BotControl(props) {
                         <label htmlFor="auto-refresh">Auto Refresh</label>
                     </div>
                 </div>
-                <div >
-                    <button onClick={onRefresh}>Refresh</button>
+                <div className='refresh-section'>
+                    <div className='refresh-button'>
+                        <button onClick={onRefresh}>Refresh</button>
+                    </div>
+                    <div className='refresh-status'>
+                        Last Refresh: {lastrefresh}
+                    </div>
                 </div>
             </div>
-            <div className='bot-control-jobs'>
-                {jobs}
+            <div className={'bot-jobs'}>
+                <div className='bot-control-jobs'>
+                    {jobs}
+                </div>
+                <div>
+                    <JobAdd jobs={props.allJobs} onAdd={props.onAdd}/>
+                </div>
             </div>
         </div>
     );

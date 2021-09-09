@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import BotControl from "./BotControl";
 import ProjectViewer from "./ProjectViewer";
 
@@ -15,7 +15,29 @@ const defaultJobs = [
     {id: 508, name: 'x86'},
 ];
 
+
 function Bot(props) {
+
+    const [jobs, setJobs] = useState(defaultJobs.slice());
+    const [allJobs, setAllJobs] = useState(defaultJobs.slice());
+
+    useEffect(() => {
+        const option = {
+            hostname: 'www.freelancer.com',
+            port: 443,
+            path: '/api/projects/0.1/jobs/?active_project_count_details=true&webapp=1&compact=true&new_errors=true&new_pools=true',
+            method: 'GET',
+        }
+
+        request.getResponse(option, data => {
+            const result = JSON.parse(data).result;
+            const newAllJobs = [];
+            for (const job of result) {
+                newAllJobs.push({id: job.id, name: job.name});
+            }
+            setAllJobs(newAllJobs);
+        });
+    }, []);
 
     const [state, setState] = useState({
         job: 0,
@@ -33,6 +55,8 @@ function Bot(props) {
 
     const interval = useRef(null);
     const refreshTime = useRef(state.settings.refreshTime);
+    const lastrefresh = useRef(null);
+    
     //const hidden = useRef([]);
 
     const refreshJob = (code) => {
@@ -116,12 +140,13 @@ function Bot(props) {
     }
 
     const refresh = (jobCodes) => {
+        lastrefresh.current = new Date();
         jobCodes.map(refreshJob);
     }
 
     const autoRefresh = () => {
         // console.log('Auto Refreshing');
-        refresh(defaultJobs.map(job => job.id));
+        refresh(jobs.map(job => job.id));
     };
 
     const onProjectOpen = (project) => {
@@ -141,7 +166,7 @@ function Bot(props) {
 
         if (controls.refresh) {
             //console.log('refresh', state);
-            const jobCodes = defaultJobs.map(job => job.id).filter(id => {
+            const jobCodes = jobs.map(job => job.id).filter(id => {
                 return controls.job === 0 || id === controls.job;
             });
             refresh(jobCodes);
@@ -188,6 +213,10 @@ function Bot(props) {
         return false;
     });
 
+    projects.sort((a, b) => {
+        return Number(b.time_submitted > a.time_submitted);
+    });
+
 
     const onHide = (project) => {
         const projects = state.projects.filter(arg => {
@@ -208,9 +237,21 @@ function Bot(props) {
         });
     }
 
+    const onJobAdd = (id, name) => {
+        setJobs(oldJobs => {
+            for (const job of oldJobs) {
+                if (job.id === id)
+                    return oldJobs;
+            }
+            const newJobs = oldJobs.slice();
+            newJobs.push({id: id, name: name});
+            return newJobs;
+        });
+    }
+
     return (
       <div className='bot'>
-          <BotControl settings={state.settings} status={ {...state.status, projectCount: projects.length, hiddenCount: state.hidden.length}} job={state.job} jobs={defaultJobs} onControlChange={onControlChange}/>
+          <BotControl lastrefresh={lastrefresh.current} onAdd={onJobAdd} settings={state.settings} status={ {...state.status, projectCount: projects.length, hiddenCount: state.hidden.length}} job={state.job} jobs={jobs} allJobs={allJobs} onControlChange={onControlChange}/>
           <ProjectViewer onOpen={onProjectOpen} onHide={onHide} projects={projects}/>
       </div>
     );
