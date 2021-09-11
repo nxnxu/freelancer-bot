@@ -1,0 +1,39 @@
+.bot-jobs {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 100%;
+}
+
+.bot-jobs-search {
+    display: flex;
+    flex-direction: column;
+    max-height: 60%;
+}
+
+.bot-jobs-search-results {
+    overflow: scroll;
+    overflow-x: hidden;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.bot-job-search-result {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.bot-jobs-view {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    border-top: black solid 1px;
+    padding-top: 5px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow: auto;
+}

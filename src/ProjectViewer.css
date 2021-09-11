@@ -1,6 +1,7 @@
 .project-viewer {
-    overflow: auto;
+    max-height: 100%;
+    overflow: scroll;
     display: flex;
     flex-direction: column;
-    border: 1px black solid;
+    overflow-x: hidden;
 }

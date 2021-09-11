@@ -2,7 +2,7 @@ const https = require('https');
 
 function justLog(...args) {
     for (const arg of args) {
-        console.log('Fooo:', arg);        
+        console.log('Requests:', arg);
     }
 }
 
@@ -46,4 +46,5 @@ function multiRequest2(options, successCallback, afterAll = justLog, errorCallba
     getResponse(options[index], func, errorCallback);
 }
 
-export default {multiRequest, getResponse, multiRequest2};
+const exported = {multiRequest, getResponse, multiRequest2}
+export default exported;

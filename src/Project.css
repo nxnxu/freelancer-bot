@@ -4,7 +4,7 @@
     background-color: white;
     border: 0 solid black;
     border-bottom-width: 1px;
-    padding: 2px;
+    padding: 5px;
     color: black;
     gap: 5px;
 }
@@ -26,12 +26,9 @@
     display: flex;
     gap: 10px;
     justify-content: flex-start;
-    /*border-top: 1px black solid;*/
 }
 
 .project-footer-item {
-    /*border: 1px black solid;*/
-    /*padding: 0.1em;*/
     color: black;
     font-size: medium;
 }
@@ -40,8 +37,9 @@
     background-color: lightgreen;
 }
 
-.color-yellow {
-    background-color: yellow;
+.color-red {
+    background-color: red;
+    color: white;
 
 }
 
@@ -59,26 +57,3 @@
     padding: 1px;
 
 }
-
-/*.project-actions {*/
-/*    width: 15%;*/
-/*    display: inline-block;*/
-/*    text-align: center;*/
-/*    !*border: 1px white solid;*!*/
-/*}*/
-
-/*.project-action {*/
-/*    background-color: black;*/
-/*    width: 2em;*/
-/*    font-size: 20px;*/
-/*    border: none;*/
-/*    color: red;*/
-/*}*/
-
-/*.project-description {*/
-/*    padding: 1em;*/
-/*    font-weight: normal;*/
-/*    color: gray;*/
-/*    font-size: 18px;*/
-
-/*}*/

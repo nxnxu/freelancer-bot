@@ -1,20 +1,36 @@
 .bot {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
     padding: 10px;
     background-color: white;
+    height: calc(100vh);
+}
+
+.bot-left-panel {
+    min-width: 35%;
+    max-width: 35%;
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+}
+
+.bot-right-panel {
+    min-width: 65%;
+    max-width: 65%;
     border: 1px black solid;
 }
 
-.bot > :nth-child(1) {
-    width: 100%;
+.bot-left-control-panel {
+    border: 1px black solid;
+    padding: 5px;
 }
 
-.bot > :nth-child(2) {
-    width: 100%;
+.bot-left-jobs-panel {
     flex-grow: 1;
+    border: 1px black solid;
+    padding: 5px;
+    overflow: auto;
 }
-
-
-
