@@ -19,6 +19,7 @@ function BotControl(props) {
             </div>
             <div className={'bot-controls'}>
                 <button onClick={props.onRefresh}>Refresh</button>
+                <button onClick={props.onClear}>Clear</button>
             </div>
         </div>
     );

@@ -110,6 +110,8 @@ function Bot(props) {
         jobCodes.map(refreshJob);
     }
 
+    const onClear = () => setProjects(old => old.length? []: old);
+
     const onJobSelect = (id) => {
         setJob(Number(id));
     }
@@ -120,7 +122,7 @@ function Bot(props) {
       <div className='bot'>
           <div className='bot-left-panel'>
               <div className={'bot-left-control-panel'}>
-                <BotControl status={{...requestStatus, projectCount: filteredProjects.length}} onRefresh={onRefresh}/>
+                <BotControl status={{...requestStatus, projectCount: filteredProjects.length}} onRefresh={onRefresh} onClear={onClear}/>
               </div>
               <div className={'bot-left-jobs-panel'}>
                   <BotJob allJobs={allJobs} jobs={jobs} job={job} onJobAdd={onJobAdd} onJobSelect={onJobSelect}/>
