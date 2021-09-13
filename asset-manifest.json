@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/freelancer-bot/static/css/main.9b84c5af.chunk.css",
-    "main.js": "/freelancer-bot/static/js/main.d26ba25b.chunk.js",
-    "main.js.map": "/freelancer-bot/static/js/main.d26ba25b.chunk.js.map",
+    "main.js": "/freelancer-bot/static/js/main.0913f62d.chunk.js",
+    "main.js.map": "/freelancer-bot/static/js/main.0913f62d.chunk.js.map",
     "runtime-main.js": "/freelancer-bot/static/js/runtime-main.601347ff.js",
     "runtime-main.js.map": "/freelancer-bot/static/js/runtime-main.601347ff.js.map",
     "static/js/2.bd6e4c3e.chunk.js": "/freelancer-bot/static/js/2.bd6e4c3e.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.601347ff.js",
     "static/js/2.bd6e4c3e.chunk.js",
     "static/css/main.9b84c5af.chunk.css",
-    "static/js/main.d26ba25b.chunk.js"
+    "static/js/main.0913f62d.chunk.js"
   ]
 }
