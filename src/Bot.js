@@ -26,7 +26,7 @@ function filterProjects(projects, jobId) {
         }
         return false;
     }).sort((lhs, rhs) => {
-        return Number(rhs.time_submitted > lhs.time_submitted);
+        return (rhs.time_submitted - lhs.time_submitted);
     });
 }
 
