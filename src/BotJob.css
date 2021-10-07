@@ -11,6 +11,10 @@
     max-height: 60%;
 }
 
+.bot-jobs-search-input {
+    padding: 2px;
+}
+
 .bot-jobs-search-results {
     overflow: scroll;
     overflow-x: hidden;

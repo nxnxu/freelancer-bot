@@ -87,7 +87,7 @@ function BotJob(props){
     return (
         <div className={'bot-jobs'}>
             <div ref={wrapperRef}  className={'bot-jobs-search'}>
-                <input type="text" onChange={e => setMatchingJobs(e.target.value)}
+                <input className={'bot-jobs-search-input'} type="text" placeholder="Search job" onChange={e => setMatchingJobs(e.target.value)}
                        onFocus={(e) => setMatchingJobs(e.target.value)} />
                 <div className={'bot-jobs-search-results'}>
                     {jobSearchResult}
