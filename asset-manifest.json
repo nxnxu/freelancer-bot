@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/freelancer-bot/static/css/main.6977c517.chunk.css",
-    "main.js": "/freelancer-bot/static/js/main.9a65508d.chunk.js",
-    "main.js.map": "/freelancer-bot/static/js/main.9a65508d.chunk.js.map",
+    "main.css": "/freelancer-bot/static/css/main.850dc7fd.chunk.css",
+    "main.js": "/freelancer-bot/static/js/main.63c25fc2.chunk.js",
+    "main.js.map": "/freelancer-bot/static/js/main.63c25fc2.chunk.js.map",
     "runtime-main.js": "/freelancer-bot/static/js/runtime-main.601347ff.js",
     "runtime-main.js.map": "/freelancer-bot/static/js/runtime-main.601347ff.js.map",
     "static/js/2.bd6e4c3e.chunk.js": "/freelancer-bot/static/js/2.bd6e4c3e.chunk.js",
     "static/js/2.bd6e4c3e.chunk.js.map": "/freelancer-bot/static/js/2.bd6e4c3e.chunk.js.map",
     "index.html": "/freelancer-bot/index.html",
-    "static/css/main.6977c517.chunk.css.map": "/freelancer-bot/static/css/main.6977c517.chunk.css.map",
+    "static/css/main.850dc7fd.chunk.css.map": "/freelancer-bot/static/css/main.850dc7fd.chunk.css.map",
     "static/js/2.bd6e4c3e.chunk.js.LICENSE.txt": "/freelancer-bot/static/js/2.bd6e4c3e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.601347ff.js",
     "static/js/2.bd6e4c3e.chunk.js",
-    "static/css/main.6977c517.chunk.css",
-    "static/js/main.9a65508d.chunk.js"
+    "static/css/main.850dc7fd.chunk.css",
+    "static/js/main.63c25fc2.chunk.js"
   ]
 }
